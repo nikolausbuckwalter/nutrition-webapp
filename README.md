@@ -1,1 +1,1 @@
-README.md
+Nutrition Tracker is a mobile-friendly web application that lets users scan food barcodes using their phone camera, retrieve nutrition facts from public APIs like Open Food Facts and USDA, and log their food intake for daily tracking. Built using React (frontend), Express (backend), and PostgreSQL (database), the app is designed to work smoothly on mobile devices, including iPhone Safari, without requiring a native app.
