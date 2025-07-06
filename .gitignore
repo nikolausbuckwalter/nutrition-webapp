@@ -1,0 +1,31 @@
+# Node dependencies
+node_modules/
+.pnpm/
+
+# Build output
+dist/
+build/
+
+# Local environment
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# System files
+.DS_Store
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+
+# Tailwind or local binaries (in case you accidentally re-add them)
+frontend/bin/
