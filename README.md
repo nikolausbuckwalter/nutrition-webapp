@@ -1,1 +1,15 @@
-Nutrition Tracker is a mobile-friendly web application that lets users scan food barcodes using their phone camera, retrieve nutrition facts from public APIs like Open Food Facts and USDA, and log their food intake for daily tracking. Built using React (frontend), Express (backend), and PostgreSQL (database), the app is designed to work smoothly on mobile devices, including iPhone Safari, without requiring a native app.
+frontend/
+├── public/                 # Static files (icons, manifest, etc.)
+├── src/
+│   ├── assets/             # Images, fonts, etc.
+│   ├── components/         # Reusable UI components (e.g. Button, Scanner)
+│   ├── pages/              # Page-level views (e.g. Home, Log, FoodDetails)
+│   ├── hooks/              # Custom React hooks (e.g. useBarcodeScanner)
+│   ├── services/           # API clients or data utilities
+│   ├── App.jsx             # Main layout + routes
+│   ├── main.jsx            # Entry point (renders <App />)
+│   └── index.css           # Tailwind CSS entry
+├── tailwind.config.js
+├── postcss.config.js
+└── vite.config.js
+
