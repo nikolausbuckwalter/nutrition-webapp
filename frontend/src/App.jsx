@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import DailyLogPage from './pages/DailyLogPage';
+import Recipes from './pages/Recipes';
+import Data from './pages/Data';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Tracks which tab is active
+  const [tab, setTab] = useState('log');
+
+  // Function to render the correct page based on selected tab
+  const renderTabContent = () => {
+    switch (tab) {
+      case 'log':
+        return <DailyLogPage />;
+      case 'recipes':
+        return <Recipes/>;
+      case 'data':
+        return <Data/>;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-gray-100">
+      {/* Top Navigation Tabs */}
+      <div className="flex space-x-4 justify-center bg-white shadow-md">
+        {[
+          { label: 'Daily Log', key: 'log' },
+          { label: 'Recipes', key: 'recipes' },
+          { label: 'Data', key: 'data' },
+        ].map(({ label, key }) => (
+          <button
+            key={key}
+            onClick={() => setTab(key)}
+            className={`px-6 py-3 font-medium border-b-2 transition ${
+              tab === key
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-blue-500'
+            }`}
+          >
+            {label}
+          </button>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Content Area */}
+      {renderTabContent()}
+    </div>
+  );
 }
 
-export default App
+export default App;
